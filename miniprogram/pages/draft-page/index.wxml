@@ -1,0 +1,76 @@
+<view class="view-body">
+
+    <view class="view-row-wrapper view-hr-row-wrapper ">
+        <view class="view-item-wrapper view-hr-item-wrapper">
+            <hr />
+        </view>
+    </view>
+
+    <form catchsubmit="formSubmit" catchreset="formReset">
+        <view class="view-form-wrapper">
+            <view class="view-column-wrapper">
+                <view class="view-item-wrapper">
+                    <image class="image-avatar" src="{{avatarUrl}}" />
+                </view>
+                <view class="view-item-wrapper">
+                    <button class="image-btn" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+                        点击选择头像
+                    </button>
+                </view>
+            </view>
+            <view class="view-item-wrapper view-inline-hr">
+                <hr />
+            </view>
+
+            <view class="view-row-wrapper show-input-border">
+                <view class="view-item-wrapper">
+                    <t-icon name="user-list" size="40rpx" data-name="{{item}}" bind:click="onIconTap" />
+                </view>
+                <view class="view-item-wrapper">
+                    <input type="nickname" name="nickname" placeholder="昵称" />
+                </view>
+            </view>
+
+            <view class="view-row-wrapper show-input-border">
+                <view class="view-item-wrapper">
+                    <t-icon name="user-circle" size="40rpx" data-name="{{item}}" bind:click="onIconTap" />
+                </view>
+                <view class="view-item-wrapper">
+                    <input type="text" name="username" placeholder="用户名" />
+                </view>
+            </view>
+
+            <view class="view-row-wrapper show-input-border">
+                <view class="view-item-wrapper">
+                    <t-icon name="lock-on" size="40rpx" data-name="{{item}}" bind:click="onIconTap" />
+                </view>
+                <view class="view-item-wrapper">
+                    <input type="text" name="passcode" placeholder="密码" />
+                </view>
+            </view>
+
+            <view class="view-row-wrapper view-row-pscfm show-input-border">
+                <view class="view-item-wrapper view-pscfm-icon">
+                    <t-icon name="rotate-locked" size="40rpx" data-name="{{item}}" bind:click="onIconTap" />
+                </view>
+                <view class="view-item-wrapper view-pscfm-input">
+                    <input type="text" name="passcodecfm" placeholder="确认密码" value="{{inputValue}}" />
+                </view>
+            </view>
+
+            <view class="view-row-wrapper">
+                <button class="reg-submit-btn" type="primary" formType="submit">注册</button>
+            </view>
+        </view>
+    </form>
+
+    <view class="view-row-wrapper">
+        <label class="forgot-label">忘记用户名 / 密码 ?</label>
+    </view>
+
+    <view class="view-row-wrapper view-hr-row-wrapper">
+        <view class="view-item-wrapper view-hr-item-wrapper">
+            <hr />
+        </view>
+    </view>
+</view>

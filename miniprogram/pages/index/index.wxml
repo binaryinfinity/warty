@@ -1,0 +1,14 @@
+<!--pages/exampleList/index.wxml-->
+<view class="container">
+    <block>
+        <view class="goods-list">
+            <block wx:for="{{ goodsList }}" wx:for-item="goodsDetail" wx:key="_id" wx:for-index="index">
+                <view class="goods-item {{ index % 2 === 0 ? 'even' : 'odd'}}">
+                    <image class="goods-image" src="../../images/default-goods-image.png" mode="widthFix" />
+                    <view data-index="{{index}}" bind:tap="jumpPage" class="goods-title">{{ goodsDetail.title }}</view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <mp-code-modal visible="{{ codeModalVisible }}" imageSrc="{{ codeImageSrc }}" />
+</view>

@@ -1,0 +1,75 @@
+page {
+    background-color: white
+}
+
+.main {
+    background-color: rgb(217, 235, 252);
+    height: 1200px;
+    margin: 1%;
+    width: 97.5%;
+    border: solid 1px rgb(168, 166, 166);
+}
+
+.show-border {
+    border: solid 1px rgb(168, 166, 166);
+}
+
+.view-section-title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    border: solid 1px lightgray;
+    padding-left: 3%;
+    padding-top: 8%;
+    padding-bottom: 3%;
+}
+
+.view-row-wrapper {
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    padding-right: 8%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+input {
+    background-color: white;
+    border: 1px rgb(173, 171, 171);
+    border-style: solid;
+}
+
+input[type="text"]:disabled {
+    background: #dddddd;
+}
+
+.btn-view {
+    border-radius: 6px;
+    border: solid 2.5px rgb(107, 82, 110);
+    color: rgb(107, 82, 110);
+    font-size: 36rpx;
+    text-align: center;
+}
+
+.t-icon {
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+input[disabled] {
+    background-color: rgb(241, 236, 236);
+}
+
+.tip_text {
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 28rpx;
+}
+
+.loading-img {
+    /* border: solid red; */
+    width: 40px;
+    height: 40px;
+}

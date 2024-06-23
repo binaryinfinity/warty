@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "注册账户",
+    "usingComponents": {
+        "cloud-tip-modal": "/components/cloudTipModal/index",
+        "t-icon": "tdesign-miniprogram/icon/icon"
+    }
+}

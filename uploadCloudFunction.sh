@@ -1,0 +1,1 @@
+"/Applications/wechatwebdevtools.app/Contents/MacOS/cli" cloud functions deploy --e warty-cloud-4gtm7ock18098264 --n quickstartFunctions --r --project "/Users/ben/WeChatProjects/warty-1.4.0" --report_first --report

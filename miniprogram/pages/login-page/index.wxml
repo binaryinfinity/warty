@@ -1,0 +1,34 @@
+<!--pages/login-page/index.wxml-->
+
+<view class="login-container">
+    <view style="width: 100%; height: 20%;">
+        <image style="width: 100%; height: 110%;" src="./../../images/loginpageBanner.png" />
+    </view>
+
+    <view style="width: 100%; display: flex; flex-direction:column; align-items: center; text-align: center;">
+        <image style="margin-top: 10px; width: 56px; height: 56px" src="./../../images/loginProfile.png" />
+        <label style="margin-bottom: 10px;">John Doe</label>
+    </view>
+
+    <view style="padding-top: 3%; display: flex; flex-direction: column; gap: 10px;">
+
+        <view style="height: 100%; border-radius: 10px; border:1px solid rgb(181, 128, 185);padding-top: 3%; padding-bottom: 3%; display: flex; flex-direction: row; gap: 10px;">
+            <t-icon style="padding-left: 10px;" name="user" size="40rpx" data-name="{{item}}" bind:click="onIconTap" />
+            <input name="username" placeholder="Username" />
+        </view>
+
+        <view style="height: 100%; border-radius: 10px; border:1px solid rgb(181, 128, 185);padding-top: 3%; padding-bottom: 3%; display: flex; flex-direction: row; gap: 10px;">
+            <t-icon style="padding-left: 10px;" name="rotate-locked" size="40rpx" data-name="{{item}}" bind:click="onIconTap" />
+            <input name="username" placeholder="Password" />
+        </view>
+    </view>
+
+    <view style="padding-top: 10%; width: 50%; text-align: center;">
+        <button class="btn-login" bind:tap="login">Login</button>
+        <label style="font-size: 10px;" class="tip-text">Forogot Username / Password ?</label>
+    </view>
+
+    <view style="margin-top: 80px; width: 100%;">
+        <hr/>
+    </view>
+</view>

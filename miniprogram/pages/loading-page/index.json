@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "正在加载页面",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}

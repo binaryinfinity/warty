@@ -1,0 +1,66 @@
+{
+    "pages": [
+        "pages/login-page/index",
+        "pages/order-form/index",
+        "pages/index/index",
+        "pages/cloud-dev/index",
+        "pages/cloud-dev-components/index",
+        "pages/deployService/index",
+        "pages/goods-list/index",
+        "pages/home-page/index",
+        "pages/loading-page/index",
+        "pages/ocr-components/index",
+        "pages/sumRecord/index",
+        "pages/sumRecordResult/index",
+        "pages/updateRecord/index",
+        "pages/updateRecordResult/index",
+        "pages/updateRecordSuccess/index",
+        "pages/user-center/index",
+        "pages/web/index",
+        "pages/register-apply/index",
+        "pages/register-page/index",
+        "pages/draft-page/index",
+        "pages/qanda-page/index"
+
+    ],
+    "plugins": {
+        "ocr-plugin": {
+            "version": "3.1.5",
+            "provider": "wx4418e3e031e551be"
+        }
+    },
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "云开发 QuickStart",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents",
+    "tabBar": {
+        "color": "#5e6461",
+        "selectedColor": "#07C160",
+        "backgroundColor": "#f0f0f0",
+        "list": [
+            {
+                "pagePath": "pages/home-page/index",
+                "text": "登陆页面",
+                "iconPath": "images/icons/examples.png",
+                "selectedIconPath": "images/icons/examples-active.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "快速开始",
+                "iconPath": "images/icons/home.png",
+                "selectedIconPath": "images/icons/home-active.png"
+            },
+            {
+                "pagePath": "pages/user-center/index",
+                "text": "我",
+                "iconPath": "images/icons/usercenter.png",
+                "selectedIconPath": "images/icons/usercenter-active.png"
+            }
+        ]
+    }
+}

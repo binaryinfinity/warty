@@ -1,0 +1,315 @@
+<!-- 数据加载，显示loading态 -->
+<block wx:if="{{ isLoading }}">
+    <view style="display: flex; flex-direction: column; align-items: center;">
+        <view class="tip_text">
+            加载中...
+        </view>
+        <image class="loading-img" src="/images/icons/loading00.gif" />
+    </view>
+</block>
+
+<block wx:if="{{ !isLoading }}">
+    <view style="display: flex; flex-direction: column;" class="main show-border">
+        <!-- ID Section -->
+        <view class="view-section-title-wrapper">
+            <label style="font-weight: bolder; font-size: 15px; height: fit-content;">
+                身份证信息
+            </label>
+
+            <view style="margin-left: auto; display: flex; margin-right: 8%;">
+                <view>
+                    <t-icon bind:tap="id_input_lock" style="margin-right: 10px; padding-right: 9px; border-right: solid 2px rgb(88, 99, 190) ;" name="edit" size="20px" />
+                </view>
+                <view>
+                    <ocr-navigator class="ocr-wrapper" bind:onSuccess="id_success" certificateType="idCard" opposite="{{false}}">
+                        <t-icon name="camera" size="20px" />
+                    </ocr-navigator>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="view-section-wrapper">
+            <view class="view-row-wrapper">
+                <t-row>
+                    <t-col span="6" t-class="dark">
+                        <view class="view-row-wrapper">
+                            <label style="text-align: right;">姓名</label>
+                        </view>
+                    </t-col>
+                    <t-col span="6" t-class="light">
+                        <input type="text" value="{{id.name}}" disabled="{{id_input_disable}}"></input>
+                    </t-col>
+                    <t-col span="4" t-class="dark">
+                        <view class="view-row-wrapper">
+                            <label style="text-align: right;">性别</label>
+                        </view>
+                    </t-col>
+                    <t-col span="6" t-class="light">
+                        <input type="text" value="{{id.gender}}" disabled="{{id_input_disable}}"></input>
+                    </t-col>
+                </t-row>
+            </view>
+
+            <view class="view-row-wrapper">
+                <t-row>
+                    <t-col span="6" t-class="dark">
+                        <view class="view-row-wrapper">
+                            <label style="text-align: right;">出生</label>
+                        </view>
+                    </t-col>
+                    <t-col span="6" t-class="light">
+                        <input type="text" value="{{id.birth}}" disabled="{{id_input_disable}}"></input>
+                    </t-col>
+                    <t-col span="4" t-class="dark">
+                        <view class="view-row-wrapper">
+                            <label style="text-align: right;">名族</label>
+                        </view>
+                    </t-col>
+                    <t-col span="6" t-class="light">
+                        <input type="text" value="{{id.nationality}}" disabled="{{id_input_disable}}"></input>
+                    </t-col>
+                </t-row>
+            </view>
+
+            <view class="view-row-wrapper">
+                <t-row>
+                    <t-col span="6" t-class="dark">
+                        <view class="view-row-wrapper">
+                            <label style="text-align: right;">住址</label>
+                        </view>
+                    </t-col>
+                    <t-col span="18" t-class="light">
+                        <input type="text" value="{{id.address}}" disabled="{{id_input_disable}}"></input>
+                    </t-col>
+                </t-row>
+            </view>
+
+            <view class="view-row-wrapper">
+                <t-row>
+                    <t-col span="6" t-class="dark">
+                        <view class="view-row-wrapper">
+                            <label style="text-align: right;">身份证号码</label>
+                        </view>
+                    </t-col>
+                    <t-col span="18" t-class="light">
+                        <input type="text" value="{{id.digits}}" disabled="{{id_input_disable}}"></input>
+                    </t-col>
+                </t-row>
+            </view>
+        </view>
+
+        <!-- Bank Card Section -->
+        <view class="view-section-title-wrapper">
+            <label style="font-weight: bolder; font-size: 15px; height: fit-content;">
+                银行账户信息
+            </label>
+
+            <view style="margin-left: auto; display: flex; margin-right: 8%;">
+                <view>
+                    <t-icon bind:tap="bank_input_lock" style="margin-right: 10px; padding-right: 9px; border-right: solid 2px rgb(88, 99, 190) ;" name="edit" size="20px" />
+                </view>
+                <view>
+                    <ocr-navigator class="ocr-wrapper" bind:onSuccess="bankcard_success" certificateType="bankCard">
+                        <t-icon name="camera" size="20px" />
+                    </ocr-navigator>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="view-row-wrapper">
+            <t-row>
+                <t-col span="6" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">银行</label>
+                    </view>
+                </t-col>
+                <t-col span="6" t-class="light">
+                    <input type="text" value="{{bankcard.authority}}" disabled="{{bank_input_disable}}"></input>
+                </t-col>
+                <t-col span="4" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">开户行</label>
+                    </view>
+                </t-col>
+                <t-col span="6" t-class="light">
+                    <input type="text" value="{{bankcard.distributor}}" disabled="{{bank_input_disable}}"></input>
+                </t-col>
+            </t-row>
+        </view>
+
+        <view class="view-row-wrapper">
+            <t-row>
+                <t-col span="6" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">银行账号</label>
+                    </view>
+                </t-col>
+                <t-col span="18" t-class="light">
+                    <input type="text" value="{{bankcard.number}}" disabled="{{bank_input_disable}}"></input>
+                </t-col>
+            </t-row>
+        </view>
+
+        <!-- Vehicle Section -->
+        <view class="view-section-title-wrapper">
+            <label style="font-weight: bolder; font-size: 15px; height: fit-content;">
+                车辆信息
+            </label>
+
+            <view style="margin-left: auto; display: flex; margin-right: 8%;">
+                <view>
+                    <t-icon bind:tap="vehicle_input_lock" style="margin-right: 10px; padding-right: 9px; border-right: solid 2px rgb(88, 99, 190) ;" name="edit" size="20px" />
+                </view>
+                <view>
+                    <ocr-navigator class="ocr-wrapper" bind:onSuccess="vehicle_success" certificateType="drivingLicense" opposite="{{false}}">
+                        <t-icon name="camera" size="20px" />
+                    </ocr-navigator>
+                </view>
+            </view>
+
+        </view>
+
+
+        <view class="view-row-wrapper">
+            <t-row>
+                <t-col span="6" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">车牌</label>
+                    </view>
+                </t-col>
+                <t-col span="6" t-class="light">
+                    <input type="text" disabled="{{vehicle_input_disable}}" value="{{vehicle_info.plate_num}}"></input>
+                </t-col>
+                <t-col span="4" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">车辆类型</label>
+                    </view>
+                </t-col>
+                <t-col span="6" t-class="light">
+                    <input type="text" disabled="{{vehicle_input_disable}}" value="{{vehicle_info.vehicle_type}}"></input>
+                </t-col>
+            </t-row>
+        </view>
+
+        <view class="view-row-wrapper">
+            <t-row>
+                <t-col span="6" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">所有人</label>
+                    </view>
+                </t-col>
+                <t-col span="6" t-class="light">
+                    <input type="text" disabled="{{vehicle_input_disable}}" value="{{vehicle_info.owner}}"></input>
+                </t-col>
+                <t-col span="4" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">使用性质</label>
+                    </view>
+                </t-col>
+                <t-col span="6" t-class="light">
+                    <input type="text" disabled="{{vehicle_input_disable}}" value="{{vehicle_info.use_character}}"></input>
+                </t-col>
+            </t-row>
+        </view>
+
+        <view class="view-row-wrapper">
+            <t-row>
+                <t-col span="6" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">品牌型号</label>
+                    </view>
+                </t-col>
+                <t-col span="18" t-class="light">
+                    <input type="text" disabled="{{vehicle_input_disable}}" value="{{vehicle_info.model}}"></input>
+                </t-col>
+            </t-row>
+        </view>
+
+        <view class="view-row-wrapper">
+            <t-row>
+                <t-col span="6" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">车辆识别代号</label>
+                    </view>
+                </t-col>
+                <t-col span="18" t-class="light">
+                    <input type="text" disabled="{{vehicle_input_disable}}" value="{{vehicle_info.vin}}"></input>
+                </t-col>
+            </t-row>
+        </view>
+
+        <view class="view-row-wrapper">
+            <t-row>
+                <t-col span="6" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">发动机号码</label>
+                    </view>
+                </t-col>
+                <t-col span="18" t-class="light">
+                    <input type="text" disabled="{{vehicle_input_disable}}" value="{{vehicle_info.engine_num}}"></input>
+                </t-col>
+            </t-row>
+        </view>
+
+        <view class="view-row-wrapper">
+            <t-row>
+                <t-col span="6" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">注册日期</label>
+                    </view>
+                </t-col>
+                <t-col span="6" t-class="light">
+                    <input type="text" disabled="{{vehicle_input_disable}}" value="{{vehicle_info.register_date}}"></input>
+                </t-col>
+                <t-col span="4" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">发证日期</label>
+                    </view>
+                </t-col>
+                <t-col span="6" t-class="light">
+                    <input type="text" disabled="{{vehicle_input_disable}}" value="{{vehicle_info.issue_date}}"></input>
+                </t-col>
+            </t-row>
+        </view>
+
+        <view class="view-row-wrapper">
+            <t-row>
+                <t-col span="6" t-class="dark">
+                    <view class="view-row-wrapper">
+                        <label style="text-align: right;">车辆状况</label>
+                    </view>
+                </t-col>
+                <t-col span="18" t-class="light">
+                    <input></input>
+                </t-col>
+            </t-row>
+        </view>
+
+        <view class="view-section-title-wrapper">
+            <label style="font-weight: bolder; font-size: 15px; height: fit-content;">
+                上传图片
+            </label>
+
+            <view style="margin-left: auto; display: flex; margin-right: 8%;">
+                <view>
+                    <t-icon bind:tap="id_input_lock" style="margin-right: 10px; padding-right: 9px; border-right: solid 2px rgb(88, 99, 190) ;" name="edit" size="20px" />
+                </view>
+                <view>
+                    <ocr-navigator class="ocr-wrapper" bind:onSuccess="{{}}" certificateType="idCard" opposite="{{false}}">
+                        <t-icon name="camera" size="20px" />
+                    </ocr-navigator>
+                </view>
+            </view>
+        </view>
+
+        <!-- 多张图片上传 -->
+        <view class="wrapper">
+            <t-upload media-type="{{['video','image']}}" files="{{originFiles}}" gridConfig="{{gridConfig}}" bind:success="handleSuccess" bind:remove="handleRemove" bind:click="handleClick" bind:sort-end="handleSortEnd" />
+
+        </view>
+
+    </view>
+
+</block>

@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "订单录入",
+    "usingComponents": {
+        "cloud-tip-modal": "/components/cloudTipModal/index",
+        "ocr-navigator": "plugin://ocr-plugin/ocr-navigator",
+        "t-button": "tdesign-miniprogram/button/button",
+        "t-row": "tdesign-miniprogram/row/row",
+        "t-col": "tdesign-miniprogram/col/col",
+        "t-input": "tdesign-miniprogram/input/input",
+        "t-icon": "tdesign-miniprogram/icon/icon",
+        "t-upload": "tdesign-miniprogram/upload/upload"
+    }
+}

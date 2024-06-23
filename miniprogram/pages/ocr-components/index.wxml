@@ -1,0 +1,84 @@
+<view class="section-view">
+    <ocr-navigator bind:onSuccess="platenum_success" certificateType="platenum">
+        <button class="button-8">车牌识别</button>
+    </ocr-navigator>
+    <view><text>{{plate_num}}</text></view>
+</view>
+
+<view class="section-view">
+    <ocr-navigator bind:onSuccess="bankcard_success" certificateType="bankCard">
+        <button class="button-8">银行卡识别</button>
+    </ocr-navigator>
+    <view><text>{{bankcard_id}}</text></view>
+</view>
+
+<view class="section-view">
+    <ocr-navigator class="ocr-wrapper" bind:onSuccess="id_success" certificateType="idCard" opposite="{{false}}">
+        <button class="button-8">身份证识别</button>
+    </ocr-navigator>
+    <view><text>{{id.name}}</text></view>
+    <view><text>{{id.gender}}</text></view>
+    <view><text>{{id.birth}}</text></view>
+    <view><text>{{id.nationality}}</text></view>
+    <view><text>{{id.digits}}</text></view>
+    <view><text>{{id.address}}</text></view>
+    <view class="pic-view">
+        <image class="img-default" src="{{id.img_path}}" mode="scaleToFill"></image>
+    </view>
+</view>
+
+<view class="section-view">
+    <ocr-navigator class="ocr-wrapper" bind:onSuccess="idback_success" certificateType="idCard" opposite="{{true}}">
+        <button class="button-8">身份证背面识别</button>
+    </ocr-navigator>
+    <view><text>{{id.authority}}</text></view>
+    <view><text>{{id.valid_date}}</text></view>
+    <view class="pic-view">
+        <image class="img-default" src="{{id.img_back_path}}" mode="scaleToFill"></image>
+    </view>
+</view>
+
+<view class="section-view">
+
+    <ocr-navigator class="ocr-wrapper" bind:onSuccess="vehicle_success" certificateType="drivingLicense" selectedOptions="{{['plateNum','vehicalType','owner']}}">
+        <button class="button-8">行驶证识别</button>
+    </ocr-navigator>
+
+    <view><text>{{vehicle_info.addr}}</text></view>
+    <view><text>{{vehicle_info.engine_num}}</text></view>
+    <view><text>{{vehicle_info.issue_date}}</text></view>
+    <view><text>{{vehicle_info.model}}</text></view>
+    <view><text>{{vehicle_info.official_seal}}</text></view>
+    <view><text>{{vehicle_info.owner}}</text></view>
+    <view><text>{{vehicle_info.plateNum}}</text></view>
+    <view><text>{{vehicle_info.register_date}}</text></view>
+    <view><text>{{vehicle_info.use_character}}</text></view>
+    <view><text>{{vehicle_info.vehicle_type}}</text></view>
+    <view><text>{{vehicle_info.vin}}</text></view>
+</view>
+
+<view class="id-section">
+    <view class="form-view" style="justify-content: space-around;">
+        <button bind:tap="id_enable" class="button-8" style="height: 24px; width: 45%; margin-left: 20px; display: table-cell; vertical-align: middle; padding-top :3px;">手动编辑</button>
+        <view style="border:solid 1px lightblue; height: 22px; width: 46%; margin-left: 8px; margin-right: 5px;">
+            <ocr-navigator bind:onSuccess="id_success" certificateType="idCard" opposite="{{false}}">
+                <image src="../../images/icons/shotting-default.png" style="padding-left: 45%; width: 24px; height: 22px;" />
+            </ocr-navigator>
+        </view>
+    </view>
+    <view class="form-view">
+        <label>姓名</label><input value="{{id.name}}" disabled="{{id.disabled}}" />
+        <label>性别</label><input value="{{id.gender}}" disabled="{{id.disabled}}" />
+    </view>
+    <view class="form-view">
+        <label>出生</label><input value="{{id.birth}}" disabled="{{id.disabled}}" />
+        <label>名族</label><input value="{{id.nationality}}" disabled="{{id.disabled}}" />
+    </view>
+    <view class="form-view">
+        <label>住址</label><input class="add-width" value="{{id.address}}" disabled="{{id.disabled}}" />
+    </view>
+    <view class="form-view">
+        <label class="label-long-char">公民身份证号码</label>
+        <input class="input-long-char" value="{{id.digits}}" disabled="{{id.disabled}}" />
+    </view>
+</view>

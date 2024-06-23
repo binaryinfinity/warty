@@ -1,0 +1,81 @@
+<view class="view-body">
+
+    <view class="view-row-wrapper view-hr-row-wrapper">
+        <view class="view-item-wrapper view-hr-item-wrapper">
+            <hr />
+        </view>
+    </view>
+
+    <form style="width: 60%; height: 80%; border: 1px solid red;">
+        <view style="height: 100%; display: flex; flex-direction:column;gap: 1%;">
+            <view class="view-column-wrapper">
+                <view class="view-item-wrapper">
+                    <image class="image-avatar" src="{{avatarUrl}}" />
+                </view>
+                <view class="view-item-wrapper">
+                    <button class="image-btn" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+                        <label class="image-lb">点击选择头像</label>
+                    </button>
+                </view>
+            </view>
+
+            <view class="view-row-wrapper view-hr-row-wrapper">
+                <view class="view-item-wrapper view-hr-item-wrapper">
+                    <hr />
+                </view>
+            </view>
+
+            <view class="view-row-wrapper show-section-border">
+                <view class="view-item-wrapper">
+                    <t-icon name="user-list" size="40rpx" data-name="{{item}}" bind:click="onIconTap" />
+                </view>
+                <view class="view-item-wrapper">
+                    <input type="nickname" name="nickname" placeholder="昵称" />
+                </view>
+            </view>
+
+            <view class="view-row-wrapper show-section-border">
+                <view class="view-item-wrapper">
+                    <t-icon name="user-circle" size="40rpx" data-name="{{item}}" bind:click="onIconTap" />
+                </view>
+                <view class="view-item-wrapper">
+                    <input type="text" name="username" placeholder="用户名" />
+                </view>
+            </view>
+
+            <view class="view-row-wrapper show-section-border">
+                <view class="view-item-wrapper">
+                    <t-icon name="lock-on" size="40rpx" data-name="{{item}}" bind:click="onIconTap" />
+                </view>
+                <view class="view-item-wrapper">
+                    <input type="text" name="passcode" placeholder="密码" />
+                </view>
+            </view>
+
+            <view class="view-row-wrapper view-row-pscfm show-section-border">
+                <view class="view-item-wrapper view-pscfm-icon">
+                    <t-icon class="show-item-border" name="rotate-locked" size="40rpx" data-name="{{item}}" bind:click="onIconTap" />
+                </view>
+                <view class="view-item-wrapper view-pscfm-input">
+                    <input class="show-item-border" type="text" name="passcodecfm" placeholder="确认密码" value="{{inputValue}}" />
+                </view>
+            </view>
+
+
+
+            <view class="view-row-wrapper">
+                <button class="show-item-border" type="primary" formType="submit">注册</button>
+            </view>
+        </view>
+    </form>
+
+    <view class="view-row-wrapper">
+        <label class="show-item-border">忘记用户名 / 密码 ?</label>
+    </view>
+
+    <view class="view-row-wrapper view-hr-row-wrapper">
+        <view class="view-item-wrapper view-hr-item-wrapper">
+            <hr />
+        </view>
+    </view>
+</view>

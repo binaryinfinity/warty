@@ -1,0 +1,7 @@
+<!--pages/exampleList/index.wxml-->
+<view style="padding-top: 150px; display: flex; flex-direction: column;align-items: center">
+    <view class="tip_text">
+        加载中...
+    </view>
+    <image class="loading-img" src="/images/icons/loading00.gif" />
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "参考示例",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index",
+    "mp-code-modal": "/components/mpCodeModal/index"
+  }
+}

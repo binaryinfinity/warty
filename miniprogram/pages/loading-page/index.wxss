@@ -1,0 +1,13 @@
+/**index.wxss**/
+
+page {
+    padding-top: 54rpx;
+    background-color: #fff;
+    padding-bottom: 60rpx;
+}
+
+.loading-img {
+    /* border: solid red; */
+    width: 40px;
+    height: 40px;
+}

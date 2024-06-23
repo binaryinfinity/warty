@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "Temp",
+    "usingComponents": {
+        "cloud-tip-modal": "/components/cloudTipModal/index",
+        "ocr-navigator": "plugin://ocr-plugin/ocr-navigator"
+    }
+}

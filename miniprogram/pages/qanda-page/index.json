@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Quize",
+    "usingComponents": {
+      "cloud-tip-modal": "/components/cloudTipModal/index"
+    }
+  }
